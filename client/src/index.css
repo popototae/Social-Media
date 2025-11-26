@@ -4,4 +4,6 @@
 body{
     background-color: #0c0e1a;
     color: white;
+    font-family: "Noto Sans Thai", sans-serif;
+    font-optical-sizing: auto;
 }

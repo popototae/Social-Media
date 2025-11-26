@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen flex">
       <Sidebar/>
-      <div className="w-full">
+      <div className="grow">
         <Routes>
           <Route path="/" element={<Home/>}/>
         </Routes>
