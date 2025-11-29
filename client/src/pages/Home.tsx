@@ -1,10 +1,32 @@
+import CarouselStory from "../components/CarouselStory"
+
 export const Home = () => {
+    const SLIDES: string[] = [
+        "mint._.day",
+        "pxx._.moon",
+        "nana._.chill",
+        "tua._.bear",
+        "lil._.miki",
+        "potto._.me",
+        "june._.vibe",
+        "mini._.tato",
+        "pixx._.pink",
+        "zoo._.na",
+        "nana._.chill",
+        "tua._.bear",
+        "lil._.miki",
+        "potto._.me",
+        "june._.vibe",
+        "mini._.tato",
+        "pixx._.pink",
+        "zoo._.na"
+    ]
     return <div className="min-h-screen flex">
         <div className="grow bg-[#111521] shadow-2xl">
-            <div className="bg-[#161e2b] max-w-[600px] mx-auto my-6 rounded-2xl p-3">
+            <div className="bg-[#161e2b] max-w-[600px] mx-auto my-3 rounded-2xl p-3">
                 <div className="border-b mb-3 border-[#8a93a2]/40">
                     <div className="flex gap-3 pb-3">
-                        <div className="w-12 h-12 rounded-full bg-slate-500"></div>
+                        <div className="size-12 rounded-full bg-slate-500"></div>
                         <div className="grow text-[0px]">
                             <textarea className="w-full text-base bg-[#242d3b] focus:outline-3 outline-slate-500 outline-offset-3 rounded-lg p-3" placeholder="วันนี้โพสต์อะไรดี ?" />
                         </div>
@@ -22,8 +44,12 @@ export const Home = () => {
                     <button className="hover:bg-[#242d3b] size-9 cursor-pointer rounded-full flex items-center justify-center transition-colors duration-180"><i className="fa-solid fa-image text-xl"></i></button>
                     <button className="bg-[#2e8dfe] hover:bg-[#2e8dfe]/50 px-8 py-1 rounded-lg cursor-pointer transition-colors duration-180">Post</button>
                 </div>
-
             </div>
+
+            <div className="bg-[#161e2b] max-w-[600px] mx-auto my-3 rounded-2xl p-3 flex space-x-3">
+                <CarouselStory slides={SLIDES} options={{align: 'start'}} />
+            </div>
+
         </div>
         <div className="w-80"></div>
     </div>

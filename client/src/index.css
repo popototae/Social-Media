@@ -7,3 +7,36 @@ body{
     font-family: "Noto Sans Thai", sans-serif;
     font-optical-sizing: auto;
 }
+
+.embla {
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+}
+
+.embla__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    position: relative;
+    flex: 0 0 16.66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.embla__controls {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
