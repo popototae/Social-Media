@@ -1,4 +1,5 @@
 import CarouselStory from "../components/CarouselStory"
+import { Post } from "../components/Post"
 
 export const Home = () => {
     const SLIDES: string[] = [
@@ -47,8 +48,10 @@ export const Home = () => {
             </div>
 
             <div className="bg-[#161e2b] max-w-[600px] mx-auto my-3 rounded-2xl p-3 flex space-x-3">
-                <CarouselStory slides={SLIDES} options={{align: 'start'}} />
+                <CarouselStory slides={SLIDES} options={{ align: 'start' }} />
             </div>
+            <Post/>
+            <Post/>
 
         </div>
         <div className="w-80"></div>
