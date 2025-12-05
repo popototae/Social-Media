@@ -32,13 +32,18 @@ export const Sidebar = () => {
                     <i className="fa-solid fa-compass mr-4 text-lg"></i>
                     Explore</Link>
             </div>
-
-            <Link
-                to={"/profile"}
-                className="px-4 py-2 rounded-lg hover:bg-[#181e2c] transition-colors duration-180"
-            >
-                <i className="fa-solid fa-user mr-4 text-lg"></i>
-                Profile</Link>
+            <div className="flex items-center">
+                <Link
+                    to={"/profile"}
+                    className="grow px-4 py-2 rounded-lg hover:bg-[#181e2c] transition-colors duration-180"
+                >
+                    <i className="fa-solid fa-user mr-4 text-lg"></i>
+                    Profile
+                </Link>
+                <Link to={"/login"} className="hover:bg-red-600/60 px-4 py-2 rounded-lg transition-colors duration-180">
+                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                </Link>
+            </div>
         </div>
     )
 } 
