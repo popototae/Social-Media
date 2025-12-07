@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
-const User = require('./User');
+const User = require('./models/User');
+const postRoute = require("./routes/posts");
+const profile = require("./routes/profile");
 
 const app = express();
 
@@ -72,6 +73,10 @@ app.post('/login', async (req, res) => {
         res.status(500).json({ message: 'Server Error', error: error.message });
     }
 });
+
+app.use("/api/posts", postRoute);
+app.use("/api/profile", profile);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

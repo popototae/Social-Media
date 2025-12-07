@@ -4,10 +4,10 @@ export const Friends = () => {
             <div className="grow bg-[#111521] shadow-2xl">
                 <div className="max-w-[600px] mx-auto my-8 rounded-2xl flex gap-5 justify-between">
                     <div className="bg-[#161e2b] flex flex-col py-8 grow text-center rounded-2xl">
-                        <span className="font-bold text-xl">1</span> Followers
+                        <span className="font-bold text-xl">1</span> Friends
                     </div >
                     <div className="bg-[#161e2b] flex flex-col py-8 grow text-center rounded-2xl">
-                        <span className="font-bold text-xl">1</span> Following
+                        <span className="font-bold text-xl">1</span> Request
                     </div>
                     <div className="bg-[#161e2b] flex flex-col py-8 grow text-center rounded-2xl">
                         <span className="font-bold text-xl">1</span> Pending

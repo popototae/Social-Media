@@ -1,4 +1,4 @@
-const { default: mongoose } = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -11,6 +11,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    bio:{
+        type: String,
+        default: ""
+    },
     password: {
         type: String,
         required: true
@@ -18,6 +22,10 @@ const UserSchema = new mongoose.Schema({
     profilePic: {
         type: String,
         default: ""
+    },
+    friends: {
+        type: Array,
+        default: []
     }
 }, { timestamps: true })
 
