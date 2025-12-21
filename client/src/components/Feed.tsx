@@ -1,14 +1,15 @@
 import { useEffect } from "react"
 import { Post } from "./Post"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 interface PostType {
-    _id: string,
-    username: string,
-    desc: string,
-    img?: string,
-    likes: string[],
-    createdAt: number
+    _id: string;
+    username: string;
+    desc: string;
+    img?: string;
+    likes: string[];
+    createdAt: number;
 }
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export const Feed = ({ posts, setPosts }: Props) => {
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchPost = async () => {
             try {
@@ -33,17 +35,35 @@ export const Feed = ({ posts, setPosts }: Props) => {
                     })
                 );
             } catch (err: any) {
+                if (err.response.data === "Token ไม่ถูกต้อง!") {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    navigate('/login');
+                }
                 console.log(err)
             }
         }
 
         fetchPost();
     }, [setPosts])
+
+    const handleDeleteFromFeed = (postId: string) => {
+        setPosts((prevPosts) => prevPosts.filter((p) => p._id !== postId));
+    };
     return (
         <>
-            {posts.map((p: any) =>  {
-                return <Post key={p._id} _id={p._id} username={p.username} desc={p.desc} img={p.img} createdAt={p.createdAt} likes={p.likes}/>
-    }
+            {posts.map((p: any) => {
+                return <Post
+                    key={p._id}
+                    _id={p._id}
+                    username={p.username}
+                    desc={p.desc}
+                    img={p.img}
+                    createdAt={p.createdAt}
+                    likes={p.likes}
+                    onDelete={handleDeleteFromFeed}
+                />
+            }
             )}
 
             {posts.length === 0 && (

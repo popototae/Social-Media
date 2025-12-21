@@ -8,8 +8,8 @@ import {
 import useEmblaCarousel from 'embla-carousel-react'
 
 type PropType = {
-    slides: string[]
-    options?: EmblaOptionsType
+    slides: string[];
+    options?: EmblaOptionsType;
 }
 
 const CarouselStory: React.FC<PropType> = (props) => {

@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:username" element={<Profile />} /> 
           <Route path="/friends" element={<Friends />} />
         </Route>
       </Route>
